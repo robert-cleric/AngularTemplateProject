@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { AlertModule } from 'ngx-bootstrap';
+import { HomeModule } from './home/home.module';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { AlertModule } from 'ngx-bootstrap';
   imports: [
     AlertModule.forRoot(),
     BrowserModule,
+    HomeModule,
     AppRoutingModule
   ],
   providers: [],

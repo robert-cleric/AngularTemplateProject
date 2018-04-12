@@ -1,0 +1,48 @@
+<div class="card bg-light mt-3">
+  <div class="card-header">
+      Hello World AngularJS application
+  </div>
+  <div class="card-body">
+      <h4 class="card-title">AngularJS Greeting</h4>
+      <label for="name">Type your name here:</label>
+      <!-- Handling input with two-way binding -->
+      <input type='text' [(ngModel)]='myModel' />
+      <!-- Binding with interpolation -->
+      <p>Hello {{myModel}}!</p>
+  </div>
+</div>
+
+<!-- <div class="card bg-light mt-3">
+  <div class="card-header">Get data (from another container)</div>
+  <div class="card-body">
+      <h4 class="card-title">Get Dogs</h4>
+      <label for="url">Type URL for API call:</label>
+      <input id="url" type="text" ng-model="vm.apiUrl">
+      <p>API URL {{vm.apiUrl}}</p>
+      <button ng-click="vm.getDogs()" class="btn btn-primary">Get Dogs</button>
+      <div ng-repeat="dog in vm.dogs">
+          {{dog}}
+      </div>
+    </div>
+</div> -->
+
+<!-- <div class="card bg-light mt-3">
+  <div class="card-header">Test Toastr</div>
+  <div class="card-body">
+      <label for="message">Type your Toastr message here:</label>
+      <input id=message type="text" ng-model="vm.message">
+      <button ng-click="vm.info()" class="btn btn-info">Info</button>
+      <button ng-click="vm.success()" class="btn btn-primary">Success</button>
+      <button ng-click="vm.error()" class="btn btn-danger">Error</button>
+
+  </div>
+</div> -->
+
+<!-- <div class="card bg-light mt-3">
+  <div class="card-header">Test Spinner</div>
+  <div class="card-body">
+      <label for="duration">Length of spinner in MS:</label>
+      <input id=duration type="text" ng-model="vm.duration">
+      <button ng-click="vm.startSpinner()" class="btn btn-primary">Start Spinner</button>
+  </div>
+</div> -->
