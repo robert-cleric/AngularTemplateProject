@@ -15,7 +15,7 @@ export class DetailsComponent implements OnInit {
   ngOnInit() {
     this._dataService.getDogs()
       .subscribe(dogs => {
-        this.dogs = dogs['message']['terrier'];
+        this.dogs = dogs;
       },
         error => this.errorMessage = <any>error
     );

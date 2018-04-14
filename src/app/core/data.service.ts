@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
 
 
 @Injectable()
@@ -11,13 +12,21 @@ export class DataService {
   constructor(private _http: HttpClient) { }
 
   getDogs(): Observable<any[]> {
+    // return this._http.get<any[]>('https://dog.ceo/api/breeds/list/all')
+    // .do(data => console.log('All: ' + JSON.stringify(data)))
+    // .catch(this.handleError);
+
+    // return this._http.get<any[]>('https://dog.ceo/api/breeds/list/all')
+    //   .map((data: any[]) => data['message']['terrier']);
+
     return this._http.get<any[]>('https://dog.ceo/api/breeds/list/all')
-    .do(data => console.log('All: ' + JSON.stringify(data)))
-    .catch(this.handleError);
+      .do(data => console.log('All: ' + JSON.stringify(data)))
+      .map((data: any[]) => data['message']['terrier'])
+      .catch(this.handleError);
   }
 
   private handleError(err: HttpErrorResponse) {
-        // in a real world app, we may send the server to some remote logging infrastructure
+        // in a real world app, we may send the error to some remote logging infrastructure
         // instead of just logging it to the console
         let errorMessage = '';
         if (err.error instanceof Error) {
