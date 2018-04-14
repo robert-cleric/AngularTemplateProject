@@ -25,6 +25,12 @@ export class DataService {
       .catch(this.handleError);
   }
 
+  getMoreDogs(url): Observable<any[]> {
+    return this._http.get<any[]>(url)
+      .do(data => console.log('All: ' + JSON.stringify(data)))
+      .catch(this.handleError);
+  }
+
   private handleError(err: HttpErrorResponse) {
         // in a real world app, we may send the error to some remote logging infrastructure
         // instead of just logging it to the console
