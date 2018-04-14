@@ -6,10 +6,10 @@ services:
         image: angular-template:latest
         build: .
         ports:
-          #- 80:80
-          #- 443:443
+          - 80:80
+          - 443:443
 
-          - "80:443"
+          #- "80:443"
         depends_on:
           - webapi
 
