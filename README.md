@@ -27,10 +27,27 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 ## To run Angular web app in Docker container
-- Go to the Dockerfile file and comment/uncomment the appropriate code.
+- Go to the docker-compose file and comment/uncomment the appropriate code.
 - Make sure that the appropriate ports are exposed.
 ```
 docker build --rm -f Dockerfile -t angular-template:latest .
-
 docker run --rm -d -p 80:443 angular-template:latest
+
+docker stop $(docker ps -a -q --filter ancestor=angular-template)
+docker rm $(docker ps -a -q --filter status=exited)
+docker rmi angular-template
+```
+
+## To run Angular web app and .NET Web API
+- Go to the docker-compose file and comment/uncomment the appropriate code.
+- Make sure the simple-web-api image is built
+```
+docker-compose up -d --build
+```
+
+## To stop the Docker container
+- From the terminal
+```
+docker-compose down
+
 ```

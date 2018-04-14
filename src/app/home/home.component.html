@@ -20,7 +20,7 @@
       <input id="url" type="text" [(ngModel)]='apiUrl'>
       <p>API URL {{apiUrl}}</p>
       <button (click)='getDogs()' class="btn btn-primary">Get Dogs</button>
-      <div ng-repeat="dog in dogs">
+      <div *ngFor="let dog of dogs">
           {{dog}}
       </div>
     </div>
