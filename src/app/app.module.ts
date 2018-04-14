@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
-import { AlertModule } from 'ngx-bootstrap';
 import { HomeModule } from './home/home.module';
+import { DetailsModule } from './details/details.module';
+import { CoreModule } from './core/core.module';
 
 
 @NgModule({
@@ -14,9 +15,11 @@ import { HomeModule } from './home/home.module';
     AppComponent
   ],
   imports: [
-    AlertModule.forRoot(),
     BrowserModule,
+    HttpClientModule,
+    CoreModule,
     HomeModule,
+    DetailsModule,
     AppRoutingModule
   ],
   providers: [],
